@@ -8,7 +8,7 @@
 * [ch01-buildup](https://github.com/se5ri/React/blob/main/workspace/ch01-buildup/README.md)
 
 ## 2장 리액트 시작하기
-* [ch02-start](./workspace-ins/ch02-start)
+* [ch02-start](https://github.com/se5ri/React/blob/main/workspace/ch02-start/README.md)
 
 ## 3장 클래스 컴포넌트와 컴포넌트의 라이프 사이클
 * [ch03-class](./workspace-ins/ch03-class)
