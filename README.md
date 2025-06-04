@@ -5,7 +5,7 @@
 # 1. 수업 목차
 
 ## 1장 리액트 빌드업
-* [ch01-buildup](./workspace-ins/ch01-buildup)
+* [ch01-buildup](https://github.com/se5ri/React/blob/main/workspace/ch01-buildup/README.md)
 
 ## 2장 리액트 시작하기
 * [ch02-start](./workspace-ins/ch02-start)
