@@ -66,7 +66,7 @@ function App() {
         <input
           id="email"
           {...register("email", {
-            required: "이멜일을 입력하세요",
+            required: "이메일을 입력하세요",
             pattern: {
               value: emailExp,
               message: "이메일 양식에 맞지 않습니다",
@@ -79,7 +79,7 @@ function App() {
         <label htmlFor="cellphone">*휴대폰</label>
         <input
           id="cellphone"
-          {...register("email", {
+          {...register("cellphone", {
             required: "휴대폰 번호를 입력하세요",
             pattern: {
               value: cellphoneExp,
