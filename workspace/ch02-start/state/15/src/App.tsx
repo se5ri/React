@@ -75,10 +75,12 @@ function App() {
       newErrors.cellphone = { message: "휴대폰 형식에 맞지 않습니다." };
     }
 
-    if (newErrors) {
+    // Object.key(객체) => 배열반환
+    // Object.key(객체).length 사용 가능!
+    if (Object.keys(newErrors).length > 0) {
       // 입력값 검증 실패
       setErrors(newErrors);
-      console.error(errors);
+      console.error(newErrors);
     } else {
       // 입력값 검증 통과
       setErrors({});
