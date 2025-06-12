@@ -64,13 +64,13 @@ function Counter({ children = "0" }: CounterProps) {
   // 카운터 초기화
   function handleReset() {
     countDispatch({ type: "RESET", value: initCount });
-    stepElem?.current?.focus();
+    stepElem?.current?.focus(); // DOM 직접 조작
   }
 
   // 증감값 변경 처리
   function handleStepChange(e: React.ChangeEvent<HTMLInputElement>) {
     const newStep = Number(e.target.value);
-    stepRef.current = newStep;
+    stepRef.current = newStep; // 직접 값 변경
   }
 
   return (
@@ -78,11 +78,11 @@ function Counter({ children = "0" }: CounterProps) {
       <label htmlFor="step">증감치</label>
       {/* TODO 비제어 컴포넌트로 만들어서 불필요한 리렌더링 방지 */}
       <input
-        ref={stepElem}
+        ref={stepElem} // DOM 참조연결
         id="step"
         type="number"
-        defaultValue={stepRef.current}
-        onChange={handleStepChange}
+        defaultValue={stepRef.current} // 초기값만 제공
+        onChange={handleStepChange} // ref만 업데이트
       />
       <Button color="red" onClick={handleDown}>
         -_-
