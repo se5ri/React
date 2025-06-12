@@ -14,8 +14,6 @@ function Counter({ children = "1" }: CounterProps) {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(initCount);
 
-  // TODO 2. 증감값을 입력하면 입력값만큼 증감
-
   // TODO 1. 1초 후에 handleUp()을 호출해서 자동으로 값 한번 증가
   // setTimeout(() => {
   //   handleUp();
@@ -23,12 +21,12 @@ function Counter({ children = "1" }: CounterProps) {
   // console.log('무한렌더링');
 
   // 마운트 된 후에 한번만 실행
-  useEffect(() => {
-    setTimeout(() => {
-      handleUp();
-    }, 1000);
-    console.log("dependencies 빈배열을 지정하면 마운트 후에 한번만 실행");
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     handleUp();
+  //   }, 1000);
+  //   console.log("dependencies 빈배열을 지정하면 마운트 후에 한번만 실행");
+  // }, []);
 
   // // 마운트 후와 업데이트 된 후에 실행
   // useEffect(() => {
@@ -40,20 +38,54 @@ function Counter({ children = "1" }: CounterProps) {
   //   );
   // });
 
+  // TODO 2. 증감치가 수정되면 증감치만큼 1회 자동 증가(handleUp()호출)
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     handleUp();
+  //   }, 1000);
+  //   console.log(
+  //     step,
+  //     "dependecies에 값을 지정하면 컴포넌트가 업데이트 될 때 지정한 값 중 하나라도 수정되었을 경우 호출됨"
+  //   );
+  // }, [step]);
+
+  useEffect(() => {
+    // set up
+    console.log("setup 함수 호출");
+    const timer = setInterval(() => {
+      console.log(new Date());
+    }, 1000);
+
+    // clean up
+    // setup 함수에서 생성한 자원을 해제하는 코드 작성
+    // 1. 컴포넌트가 언마운트 될 때 호출
+    // 2. setup 함수가 재실행 되기 전에 호출
+    return () => {
+      console.log("cleanup 함수 호출");
+      clearInterval(timer);
+    };
+  });
+
   // 카운터 감소
   const handleDown = () => {
-    setCount(count - 1);
+    setCount(count - step);
   };
 
   // 카운터 증가
   const handleUp = () => {
-    setCount(count + 1);
+    setCount(count + step);
   };
 
   // 카운터 초기화
   const handleReset = () => {
     setCount(0);
   };
+
+  console.log("렌더링 중", document.querySelector("span")?.textContent);
+
+  useEffect(() => {
+    console.log("렌더링 후", document.querySelector("span")?.textContent);
+  });
 
   return (
     <div id="counter">
