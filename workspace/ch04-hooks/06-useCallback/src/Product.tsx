@@ -25,4 +25,5 @@ function Product({ name, price, mainImage, content }: ProductProps) {
   );
 }
 
+//App 리렌더링 → Product props 비교 → 동일하면 리렌더링 생략
 export default React.memo(Product);

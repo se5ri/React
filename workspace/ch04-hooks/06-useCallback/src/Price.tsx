@@ -1,9 +1,11 @@
 interface PriceProps {
-  price: number;
-  maxQuantity: number;
-  shippingFees: number;
-  productPrice: number;
-  quantity: number;
+  price: number; // 상품 단가
+  maxQuantity: number; // 최대 구매 가능 수량
+  shippingFees: number; // 기본 배송비 (5개당)
+  productPrice: number; // 계산된 총 상품 금액
+  quantity: number; // 현재 선택된 수량
+
+  // 수량 변경 핸들러
   handleQuantityChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 

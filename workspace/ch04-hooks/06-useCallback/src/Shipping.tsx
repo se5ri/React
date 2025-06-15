@@ -1,8 +1,8 @@
 import React from "react";
 
 interface ShippingProps {
-  fees: number;
-  handlePayment: () => void;
+  fees: number; // 계산된 배송비
+  handlePayment: () => void; // 결제 버튼 클릭 핸들러
 }
 
 // TODO 컴포넌트를 메모이제이션 해서 불필요한 리렌더링 방지
