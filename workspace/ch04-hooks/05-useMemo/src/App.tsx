@@ -23,8 +23,8 @@ const isPrime = function (num: number) {
 function App() {
   console.log("App 렌더링.");
 
-  const [name, setName] = useState("GD");
-  const [num, setNum] = useState(1);
+  const [name, setName] = useState("GD"); // 사용자 이름을 저장하는 상태
+  const [num, setNum] = useState(1); // 소수 판별할 숫자를 저장하는 상태
 
   // TODO name이 바뀔때 리렌더링이 필요하지만 소수 계산은 다시 할 필요 없음
   // num이 바뀔때만 다시 계산하고 num이 바뀌지 않으면 메모이제이션 된 값을 반환해야 함
