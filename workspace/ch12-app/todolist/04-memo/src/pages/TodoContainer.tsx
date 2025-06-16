@@ -28,7 +28,7 @@ function TodoContainer() {
     todoDispatch({ type: "ADD", value: item });
   }, []);
 
-  // TODO 1. useCallback으로 콜백 함수 메모이제이션
+  //  1. useCallback으로 콜백 함수 메모이제이션
 
   // 완료/미완료 처리
   const toggleDone = useCallback((_id: number) => {
