@@ -1,17 +1,21 @@
 import CommentNew from "@/pages/board/CommentNew";
+import type { ReplyType } from "@/types/BoardType";
 
-function Comments() {
+interface propType {
+  replies: ReplyType[];
+}
+
+function CommentList({ replies = [] }: propType) {
+  const replyList = replies.map((reply) => (
+    <li key={reply._id}>{reply.content}</li>
+  ));
   return (
     <>
       <h3>댓글 목록</h3>
-      <ul>
-        <li>3번 댓글</li>
-        <li>2번 댓글</li>
-        <li>1번 댓글</li>
-      </ul>
+      <ul>{replyList}</ul>
       <CommentNew />
     </>
   );
 }
 
-export default Comments;
+export default CommentList;
