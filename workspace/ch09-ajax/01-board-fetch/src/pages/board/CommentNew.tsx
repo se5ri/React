@@ -13,7 +13,7 @@ function CommentNew() {
         {
           headers: {
             "Client-Id": "openmarket",
-            "Content-Type": "application/json",
+            "Content-Type": "application/json", // 요청 바디의 데이터 타입을 서버에 json이라고 알림
           },
           method: "POST",
 

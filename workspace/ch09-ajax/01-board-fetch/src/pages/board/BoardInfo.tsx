@@ -19,7 +19,7 @@ function BoardInfo() {
       setIsLoading(true);
 
       const response = await fetch(
-        "https://fesp-api.koyeb.app/market/posts/1? delay = 1000",
+        "https://fesp-api.koyeb.app/market/posts/1?delay=1000",
         {
           headers: {
             "Client-Id": "openmarket",
@@ -62,7 +62,7 @@ function BoardInfo() {
         <>
           <h2>{data.title}</h2>
           <p>{data.content}</p>
-          <CommentList replies={data.replies} />
+          <CommentList />
         </>
       )}
     </>
