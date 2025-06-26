@@ -1,5 +1,5 @@
 import Left3 from "@/components/Left3";
-import { countAtom } from "@/jotai/atoms";
+import { doubleDoubleCountAtom as countAtom } from "@/jotai/derived";
 import { useAtomValue } from "jotai";
 import { useEffect } from "react";
 
@@ -9,6 +9,7 @@ function Left2() {
   });
 
   const count = useAtomValue(countAtom);
+
   return (
     <div>
       <h2>Left2</h2>
